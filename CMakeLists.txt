@@ -8,6 +8,7 @@ if (USE_CUDA)
 endif(USE_CUDA)
 
 add_library(matmul_cuda matmul_cuda.cu)
+target_compile_features(matmul_cuda PUBLIC cxx_std_11)
 
 add_executable(main main.cc)
 target_link_libraries(main matmul_cuda)

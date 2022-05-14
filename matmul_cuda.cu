@@ -42,6 +42,9 @@ void matmul(Matrix& A, Matrix& B, Matrix& C) {
     cudaMalloc(&d_B.element, size);
     cudaMemcpy(d_B.element, B.element, size, cudaMemcpyHostToDevice);
 
+    size = C.height * C.weight * sizeof(double);
+    cudaMalloc(&d_C.element, size);
+
     matmul_kernel<<<1, 1>>>(d_A, d_B, d_C);
 
     cudaFree(d_A.element);

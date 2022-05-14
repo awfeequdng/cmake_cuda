@@ -8,9 +8,9 @@ const int N = 10000;
 const int K = 10000;
 
 
-double A[M][N] = {0.0};
-double B[N][K] = {0.0};
-double C[M][K] = {0.0};
+float A[M][N] = {0.0};
+float B[N][K] = {0.0};
+float C[M][K] = {0.0};
 
 int main() {
     for (int i = 0; i < M; i++) {
@@ -36,6 +36,6 @@ int main() {
 
     auto end_time = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
-    std::cout << "matmul spend time: " << double(duration.count()) / 1000000 << " s" << std::endl;
+    std::cout << "matmul spend time: " << float(duration.count()) / 1000000 << " s" << std::endl;
     return 0;
 }

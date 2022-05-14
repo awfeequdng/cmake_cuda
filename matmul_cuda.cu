@@ -3,7 +3,7 @@
 
 // Matrix multiplication kernel called by MatMul()
  __global__ void matmul_kernel(Matrix A, Matrix B, Matrix C) {
-    C.element[0] = A.element[0] + B.emement[0];
+    C.element[0] = A.element[0] + B.element[0];
  }
 
 void matmul(Matrix& A, Matrix& B, Matrix& C) {
